@@ -44,7 +44,8 @@ function removeProduct(event) {
 
 function createProduct(elem) {
   console.log(elem)
-  const newProduct = document.querySelector(".product").cloneNode(true)
+  const newProductBackup = document.querySelector(".product").cloneNode(true) 
+  const newProduct = newProductBackup
   const newName = document.querySelector(".create-product td input[type=text]").value
   const newPrice = document.querySelector(".create-product td input[type=number]").value
 newProduct.querySelector(".name span").innerText = newName
@@ -53,6 +54,10 @@ newProduct.querySelector(".price span").textContent = newPrice
 newProduct.querySelector(".btn-remove").addEventListener('click', removeProduct)
 
 document.querySelector("tbody").appendChild(newProduct)
+
+document.querySelector(".create-product td input[type=text]").value = ""
+document.querySelector(".create-product td input[type=number]").value = 0
+
 
 
 }
