@@ -37,15 +37,15 @@ function removeProduct(event) {
   
 }
 
-
+const newProductBackup = document.querySelector(".product").cloneNode(true)
 
 
 // ITERATION 5
 
 function createProduct(elem) {
   console.log(elem)
-  const newProductBackup = document.querySelector(".product").cloneNode(true) 
-  const newProduct = newProductBackup
+   
+  const newProduct = newProductBackup.cloneNode(true)
   const newName = document.querySelector(".create-product td input[type=text]").value
   const newPrice = document.querySelector(".create-product td input[type=number]").value
 newProduct.querySelector(".name span").innerText = newName
